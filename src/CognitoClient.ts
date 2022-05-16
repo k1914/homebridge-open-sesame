@@ -200,7 +200,7 @@ export class CognitoClient implements Client {
       ),
     );
 
-    const url = `${APIGW_URL}/device/v1/iot/sesame2/${this.#device.uuid}`;
+    const url = `https://app.candyhouse.co/api/sesame2/${this.#device.uuid}/cmd`;
     const history = historyName ?? "Homebridge";
     const base64_history = Buffer.from(history).toString("base64");
     const sign = this.generateRandomTag(this.#device.secret).slice(0, 8);
